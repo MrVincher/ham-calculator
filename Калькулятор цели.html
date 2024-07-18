@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Калькулятор достижения целевой суммы</h1>
+    Доход в час: <input type="number" id="income_hour" value="3700000"> монет<br>
+    Имеющаяся сумма: <input type="number" id="current_amount" value="229985000"> монет<br>
+    Целевая сумма: <input type="number" id="target_amount" value="1000000000"> монет<br>
+    <button onclick="calculateTime()">Рассчитать время</button>
+    <p id="result"></p>
+    <script>
+        function calculateTime() {
+            let incomeHour = document.getElementById("income_hour").value;
+            let currentAmount = document.getElementById("current_amount").value;
+            let targetAmount = document.getElementById("target_amount").value;
+            let remainingAmount = targetAmount - currentAmount;
+            let hoursNeeded = remainingAmount / incomeHour;
+            let days = Math.floor(hoursNeeded / 24);
+            let hours = Math.floor(hoursNeeded % 24);
+            document.getElementById("result").innerHTML = `При доходе ${incomeHour} монет в час и имеющейся сумме ${currentAmount} монет, сумма в ${targetAmount} монет будет достигнута через ${days} дней ${hours} часов.`;
+        }
+    </script>
+</body>
+</html>
