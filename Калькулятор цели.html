@@ -6,23 +6,24 @@
     <title>Калькулятор</title>
     <style>
         body {
-            background: url('background.jpg') no-repeat center center fixed; /* Добавление фонового изображения */
-            background-size: cover; /* Покрытие всего экрана */
-            color: white; /* Цвет текста */
-            font-family: Arial, sans-serif; /* Шрифт */
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Высота 100% от экрана */
+            height: 100vh;
             margin: 0;
-            background-color: #333; /* Резервный цвет фона */
+            background-color: #333;
         }
         .calculator {
-            background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный черный фон */
+            background-color: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             text-align: center;
+            max-width: 80%; /* Максимальная ширина для контейнера */
         }
         input {
             margin: 10px 0;
@@ -35,12 +36,22 @@
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
-            background-color: #28a745; /* Зеленая кнопка */
+            background-color: #28a745;
             color: white;
             cursor: pointer;
         }
         button:hover {
-            background-color: #218838; /* Темно-зеленая кнопка при наведении */
+            background-color: #218838;
+        }
+
+        /* Медиа-запрос для мобильных устройств */
+        @media (max-width: 600px) {
+            .calculator {
+                padding: 10px;
+            }
+            input, button {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -50,7 +61,7 @@
         <label for="income_hour">Доход в час:</label>
         <input type="number" id="income_hour" value="3700000" placeholder="Введите доход в час">
         <label for="current_amount">Имеющаяся сумма:</label>
-        <input type="number" id="current_amount" value="229985000" placeholder="Введите имеющуюся сумму">
+        <input type="number" id="current_amount" value="200000" placeholder="Введите имеющуюся сумму">
         <label for="target_amount">Целевая сумма:</label>
         <input type="number" id="target_amount" value="1000000000" placeholder="Введите целевую сумму">
         <button onclick="calculateTime()">Рассчитать время</button>
